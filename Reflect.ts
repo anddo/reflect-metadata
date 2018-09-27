@@ -622,6 +622,7 @@ namespace Reflect {
 
     (function (this: any, factory: (exporter: <K extends keyof typeof Reflect>(key: K, value: typeof Reflect[K]) => void) => void) {
         const root = typeof global === "object" ? global :
+            typeof window === 'object' ? window :
             typeof self === "object" ? self :
             typeof this === "object" ? this :
             Function("return this;")();
